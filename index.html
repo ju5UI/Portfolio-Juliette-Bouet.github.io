@@ -235,7 +235,6 @@
       border-radius: 2px;
     }
 
-    /* Tableau des Compétences */
     .table-container {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
@@ -279,29 +278,37 @@
 
     td.check-cell {
       text-align: center;
-      font-weight: 800;
-      font-size: 1.1rem;
-      color: #0284c7;
+      vertical-align: middle;
     }
 
-    .mark-x {
+    .mark-link {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 28px;
-      height: 28px;
-      border-radius: 6px;
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
       background: #e0f2fe;
-      color: #0369a1;
+      color: #0284c7;
       font-weight: 800;
-      font-size: 0.95rem;
+      font-size: 1rem;
+      border: 1px solid #bae6fd;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    .mark-link:hover {
+      background: #0284c7;
+      color: #ffffff;
+      border-color: #0284c7;
+      transform: scale(1.1);
+      box-shadow: 0 4px 10px rgba(2, 132, 199, 0.3);
     }
 
     tr:hover td {
       background: rgba(224, 242, 254, 0.25);
     }
 
-    /* Grille de cartes */
     .grid-2 {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
@@ -366,7 +373,6 @@
       font-weight: 600;
     }
 
-    /* Contact */
     .contact-box {
       background: linear-gradient(135deg, #ffffff 0%, #f0fdfa 100%);
       border: 1px solid #cbd5e1;
@@ -466,7 +472,6 @@
 </head>
 <body>
 
-  <!-- Navigation -->
   <header>
     <nav>
       <div class="logo">
@@ -489,7 +494,6 @@
     </nav>
   </header>
 
-  <!-- Hero Section -->
   <section class="hero-alpine">
     <div class="hero-badge">
       <span></span> Réseaux & Cybersécurité
@@ -499,7 +503,6 @@
       Étudiante en informatique passionnée par les réseaux et la sécurité des systèmes.
     </p>
 
-    <!-- Décor de Montagne Stylisé -->
     <div class="mountain-scenery">
       <svg class="peaks-sky" viewBox="0 0 1200 190">
         <polygon points="0,190 0,90 160,40 320,110 500,20 680,105 840,30 1020,120 1150,55 1200,80 1200,190" />
@@ -518,7 +521,6 @@
 
   <main>
 
-    <!-- Tableau de compétences BTS SIO -->
     <section id="competences">
       <h2 class="section-title">Tableau des Compétences</h2>
       <div class="table-container">
@@ -539,20 +541,26 @@
               <td><strong>Création et mise en ligne du site WordPress « L'École-Scrollaire »</strong></td>
               <td class="check-cell"></td>
               <td class="check-cell"></td>
-              <td class="check-cell"><span class="mark-x">X</span></td>
+              <td class="check-cell">
+                <a href="ecole-scrollaire.pdf" target="_blank" rel="noopener noreferrer" class="mark-link" title="Ouvrir le dossier École-Scrollaire">X</a>
+              </td>
               <td class="check-cell"></td>
               <td class="check-cell"></td>
               <td class="check-cell"></td>
             </tr>
+
             <tr>
               <td><strong>Suivi et analyse hebdomadaire de l'avancement de la remédiation des serveurs (tableaux de bord Excel)</strong></td>
-              <td class="check-cell"><span class="mark-x">X</span></td>
+              <td class="check-cell">
+                <a href="campagne-de-remediation.pdf" target="_blank" rel="noopener noreferrer" class="mark-link" title="Ouvrir le document de remédiation">X</a>
+              </td>
               <td class="check-cell"></td>
               <td class="check-cell"></td>
               <td class="check-cell"></td>
               <td class="check-cell"></td>
               <td class="check-cell"></td>
             </tr>
+
             <tr>
               <td><strong>SecNumAcadémie — ANSSI</strong></td>
               <td class="check-cell"></td>
@@ -560,8 +568,11 @@
               <td class="check-cell"></td>
               <td class="check-cell"></td>
               <td class="check-cell"></td>
-              <td class="check-cell"><span class="mark-x">X</span></td>
+              <td class="check-cell">
+                <a href="tp-mooc-anssi.pdf" target="_blank" rel="noopener noreferrer" class="mark-link" title="Ouvrir l'attestation MOOC ANSSI">X</a>
+              </td>
             </tr>
+
             <tr>
               <td><strong>Fortinet Certified Fundamentals</strong></td>
               <td class="check-cell"></td>
@@ -569,14 +580,15 @@
               <td class="check-cell"></td>
               <td class="check-cell"></td>
               <td class="check-cell"></td>
-              <td class="check-cell"><span class="mark-x">X</span></td>
+              <td class="check-cell">
+                <a href="fortinet-certified.pdf" target="_blank" rel="noopener noreferrer" class="mark-link" title="Ouvrir la certification Fortinet">X</a>
+              </td>
             </tr>
           </tbody>
         </table>
       </div>
     </section>
 
-    <!-- Certifications -->
     <section id="certifications">
       <h2 class="section-title">Certifications</h2>
       <div class="grid-2">
@@ -594,7 +606,6 @@
       </div>
     </section>
 
-    <!-- Centres d'intérêt -->
     <section id="interets">
       <h2 class="section-title">Centres d'intérêt</h2>
       <div class="grid-2">
@@ -626,7 +637,6 @@
       </div>
     </section>
 
-    <!-- Contact -->
     <section id="contact">
       <div class="contact-box">
         <h2>Me contacter</h2>
@@ -636,7 +646,7 @@
         <div class="contact-links">
           <a href="https://www.linkedin.com/in/juliette-bouet-b588b93b7" target="_blank" rel="noopener noreferrer" class="btn-contact linkedin">
             <svg viewBox="0 0 24 24">
-              <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.25c-.9 0-1.63.73-1.63 1.63s.73 1.63 1.63 1.63 1.63-.73 1.63-1.63-.73-1.63-1.63Z"/>
+              <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.25c-.9 0-1.63.73-1.63 1.63s.73 1.63 1.63 1.63 1.63-.73 1.63-1.63-.73-1.63-1.63-1.63Z"/>
             </svg>
             LinkedIn
           </a>
