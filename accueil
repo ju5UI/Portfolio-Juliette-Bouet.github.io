@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Juliette Bouet | Portfolio Réseaux & Cybersécurité</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      /* Palette Montagne Estivale Ensoleillée */
+      --sky-top: #e0f2fe;
+      --sky-mid: #f0f9ff;
+      --sun-gold: #f59e0b;
+      --sun-light: #fef3c7;
+      --pine-fresh: #0d9488;
+      --pine-soft: #ccfbf1;
+      --slate-text: #1e293b;
+      --muted-text: #475569;
+      --card-bg: rgba(255, 255, 255, 0.92);
+      --card-border: rgba(226, 232, 240, 0.9);
+      --shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.06), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: linear-gradient(180deg, #dbeafe 0%, #f0fdf4 35%, #f8fafc 100%);
+      color: var(--slate-text);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      line-height: 1.65;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    a {
+      color: var(--pine-fresh);
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    a:hover {
+      color: #0f766e;
+    }
+
+    /* Barre de navigation */
+    header {
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(14px);
+      background: rgba(255, 255, 255, 0.85);
+      border-bottom: 1px solid rgba(203, 213, 225, 0.6);
+      z-index: 100;
+    }
+
+    nav {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.75rem;
+    }
+
+    .logo {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #0f172a;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .logo svg {
+      width: 26px;
+      height: 26px;
+      fill: #0ea5e9;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.75rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--muted-text);
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover {
+      color: #0284c7;
+    }
+
+    /* Bouton CV avec ouverture PDF */
+    .nav-cv-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      background: #0284c7 !important;
+      color: #ffffff !important;
+      padding: 0.5rem 1.1rem;
+      border-radius: 999px;
+      font-size: 0.88rem !important;
+      font-weight: 700 !important;
+      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
+      transition: all 0.2s ease !important;
+    }
+
+    .nav-cv-link:hover {
+      background: #0369a1 !important;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(2, 132, 199, 0.35);
+    }
+
+    /* Hero Section */
+    .hero-alpine {
+      position: relative;
+      padding: 6.5rem 1.5rem 0;
+      text-align: center;
+      background: radial-gradient(circle at 50% -20%, #fef08a 0%, #e0f2fe 50%, transparent 80%);
+      overflow: hidden;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      color: #0369a1;
+      padding: 0.4rem 1.1rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-badge span {
+      width: 8px;
+      height: 8px;
+      background: #22c55e;
+      border-radius: 50%;
+    }
+
+    h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(2.8rem, 5.5vw, 4.2rem);
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: -0.5px;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+
+    .hero-alpine p {
+      max-width: 620px;
+      margin: 0 auto 2.5rem;
+      color: var(--muted-text);
+      font-size: 1.15rem;
+      font-weight: 500;
+    }
+
+    /* Silhouette Alpage Lumineuse */
+    .mountain-scenery {
+      position: relative;
+      width: 100%;
+      height: 190px;
+      overflow: hidden;
+      margin-top: 1rem;
+    }
+
+    .mountain-scenery svg {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      preserveAspectRatio: none;
+    }
+
+    .peaks-sky {
+      fill: #bae6fd;
+      opacity: 0.7;
+    }
+
+    .peaks-mid {
+      fill: #93c5fd;
+      opacity: 0.5;
+    }
+
+    .peaks-hills {
+      fill: #a7f3d0;
+      opacity: 0.8;
+    }
+
+    .peaks-foreground {
+      fill: #f8fafc;
+    }
+
+    /* Contenu */
+    main {
+      max-width: 1050px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 5rem;
+    }
+
+    section {
+      margin-bottom: 5.5rem;
+    }
+
+    .section-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.85rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .section-title::after {
+      content: "";
+      flex: 1;
+      height: 2px;
+      background: linear-gradient(90deg, #93c5fd, transparent);
+      border-radius: 2px;
+    }
+
+    /* Tableau des Compétences */
+    .table-container {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      overflow-x: auto;
+      box-shadow: var(--shadow);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.95rem;
+    }
+
+    th {
+      background: #f1f5f9;
+      color: #334155;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      padding: 1.1rem 1.4rem;
+      border-bottom: 2px solid #e2e8f0;
+      white-space: nowrap;
+    }
+
+    td {
+      padding: 1.1rem 1.4rem;
+      border-bottom: 1px solid #f1f5f9;
+      color: #334155;
+      vertical-align: top;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:hover td {
+      background: rgba(224, 242, 254, 0.4);
+    }
+
+    .pill {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      background: #e0f2fe;
+      color: #0284c7;
+    }
+
+    /* Grille de cartes */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 1.75rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: var(--shadow);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 28px -5px rgba(15, 23, 42, 0.1);
+    }
+
+    .card h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 0.6rem;
+    }
+
+    .card p {
+      color: var(--muted-text);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .card-badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      background: #ecfdf5;
+      color: #059669;
+      border: 1px solid #a7f3d0;
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      margin-bottom: 0.85rem;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1.25rem;
+    }
+
+    .tag {
+      background: #f1f5f9;
+      color: #475569;
+      padding: 0.3rem 0.8rem;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 600;
+    }
+
+    /* Contact */
+    .contact-box {
+      background: linear-gradient(135deg, #ffffff 0%, #f0fdfa 100%);
+      border: 1px solid #cbd5e1;
+      border-radius: 20px;
+      padding: 3.5rem 2rem;
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto;
+      box-shadow: 0 16px 32px -4px rgba(15, 23, 42, 0.08);
+    }
+
+    .contact-box h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.1rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 0.6rem;
+    }
+
+    .contact-box p {
+      color: var(--muted-text);
+      font-size: 1rem;
+    }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+
+    .btn-contact {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.85rem 1.4rem;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 0.92rem;
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      color: #1e293b;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+      transition: all 0.2s ease;
+    }
+
+    .btn-contact svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+    }
+
+    .btn-contact:hover {
+      border-color: #0284c7;
+      color: #0284c7;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 14px rgba(2, 132, 199, 0.12);
+    }
+
+    .btn-contact.linkedin {
+      background: #f0f9ff;
+      border-color: #bae6fd;
+      color: #0284c7;
+    }
+
+    .btn-contact.linkedin:hover {
+      background: #0284c7;
+      color: #ffffff;
+      border-color: #0284c7;
+    }
+
+    footer {
+      border-top: 1px solid #e2e8f0;
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      color: #64748b;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        gap: 1rem;
+      }
+      .nav-links a {
+        font-size: 0.85rem;
+      }
+      .contact-links {
+        flex-direction: column;
+      }
+      .btn-contact {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header>
+    <nav>
+      <div class="logo">
+        <svg viewBox="0 0 24 24">
+          <path d="M14 6l-3.8 5-2.2-3L2 19h20L14 6z"/>
+        </svg>
+        Juliette Bouet[cite: 2]
+      </div>
+      <ul class="nav-links">
+        <li><a href="#competences">Compétences</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#interets">Centres d'intérêt</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <!-- Lien direct vers le fichier PDF -->
+        <li>
+          <a href="CV%20Juliette%20Bouet.pdf" target="_blank" rel="noopener noreferrer" class="nav-cv-link">
+            Consulter mon CV
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-alpine">
+    <div class="hero-badge">
+      <span></span> Réseaux & Cybersécurité[cite: 2]
+    </div>
+    <h1>Juliette Bouet</h1>
+    <p>
+      Étudiante en informatique passionnée par les réseaux et la sécurité des systèmes[cite: 2].
+    </p>
+
+    <!-- Décor de Montagne Stylisé -->
+    <div class="mountain-scenery">
+      <svg class="peaks-sky" viewBox="0 0 1200 190">
+        <polygon points="0,190 0,90 160,40 320,110 500,20 680,105 840,30 1020,120 1150,55 1200,80 1200,190" />
+      </svg>
+      <svg class="peaks-mid" viewBox="0 0 1200 190">
+        <polygon points="0,190 0,130 190,70 370,140 560,60 740,130 920,50 1080,110 1200,85 1200,190" />
+      </svg>
+      <svg class="peaks-hills" viewBox="0 0 1200 190">
+        <polygon points="0,190 0,155 120,125 280,165 460,115 650,160 810,110 990,155 1130,125 1200,145 1200,190" />
+      </svg>
+      <svg class="peaks-foreground" viewBox="0 0 1200 190">
+        <polygon points="0,190 0,175 220,150 500,180 820,145 1100,175 1200,165 1200,190" />
+      </svg>
+    </div>
+  </section>
+
+  <main>
+
+    <!-- Section Compétences (Tableau prêt pour tes données) -->
+    <section id="competences">
+      <h2 class="section-title">Compétences</h2>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Domaine</th>
+              <th>Compétence / Technologie</th>
+              <th>Niveau / Contexte</th>
+              <th>Détails & Réalisations</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="pill">Réseaux</span></td>
+              <td><strong>Architecture & Adressage</strong></td>
+              <td>Opérationnel</td>
+              <td>Segmentation réseau, topologie et routage.</td>
+            </tr>
+            <tr>
+              <td><span class="pill">Sécurité</span></td>
+              <td><strong>Fondamentaux de Protection</strong></td>
+              <td>Opérationnel</td>
+              <td>Bonnes pratiques et hygiène informatique.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section Certifications (Uniquement celles du CV) -->
+    <section id="certifications">
+      <h2 class="section-title">Certifications</h2>
+      <div class="grid-2">
+        <div class="card">
+          <span class="card-badge">Cybersécurité</span>
+          <h3>Fortinet Certified Fundamentals[cite: 2]</h3>
+          <p>Validation des principes essentiels de protection périmétrique, d'analyse des menaces actuelles et de sécurité des réseaux[cite: 2].</p>
+        </div>
+
+        <div class="card">
+          <span class="card-badge">Certification d'État</span>
+          <h3>SecNumAcadémie — ANSSI[cite: 2]</h3>
+          <p>Formation officielle de l'Agence Nationale de la Sécurité des Systèmes d'Information aux fondamentaux de la sécurité numérique[cite: 2].</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Centres d'intérêt (Sport & Scoutisme uniquement) -->
+    <section id="interets">
+      <h2 class="section-title">Centres d'intérêt</h2>
+      <div class="grid-2">
+        <div class="card">
+          <span class="card-badge">Sport[cite: 2]</span>
+          <h3>Escalade & Randonnée[cite: 2]</h3>
+          <p>
+            Pratique régulière de l'escalade et de la randonnée en montagne[cite: 2].
+          </p>
+          <div class="tags">
+            <span class="tag">Escalade</span>
+            <span class="tag">Randonnée</span>
+            <span class="tag">Montagne</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="card-badge">Engagement</span>
+          <h3>Scoutisme & Encadrement[cite: 2]</h3>
+          <p>
+            Membre active depuis l'âge de 8 ans et investie dans l'encadrement des jeunes[cite: 2].
+          </p>
+          <div class="tags">
+            <span class="tag">Depuis mes 8 ans[cite: 2]</span>
+            <span class="tag">Encadrement de jeunes[cite: 2]</span>
+            <span class="tag">Esprit d'équipe</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Contact -->
+    <section id="contact">
+      <div class="contact-box">
+        <h2>Me contacter</h2>
+        <p>
+          Disponible pour échanger autour de projets techniques et d'opportunités.
+        </p>
+        <div class="contact-links">
+          <!-- LinkedIn -->
+          <a href="https://www.linkedin.com/in/juliette-bouet-b588b93b7" target="_blank" rel="noopener noreferrer" class="btn-contact linkedin">
+            <svg viewBox="0 0 24 24">
+              <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.25c-.9 0-1.63.73-1.63 1.63s.73 1.63 1.63 1.63 1.63-.73 1.63-1.63-.73-1.63-1.63-1.63Z"/>
+            </svg>
+            LinkedIn
+          </a>
+
+          <!-- Email -->
+          <a href="mailto:1juliette.bouet@gmail.com" class="btn-contact">
+            <svg viewBox="0 0 24 24">
+              <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+            </svg>
+            1juliette.bouet@gmail.com[cite: 2]
+          </a>
+
+          <!-- Téléphone -->
+          <a href="tel:0652858478" class="btn-contact">
+            <svg viewBox="0 0 24 24">
+              <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+            </svg>
+            06 52 85 84 78[cite: 2]
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2026 Juliette Bouet[cite: 2]</p>
+  </footer>
+
+</body>
+</html>
